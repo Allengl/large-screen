@@ -26,27 +26,26 @@ const DemoChart: React.FC = () => {
           show: node.symbolSize > 30
         };
       });
-      // eslint-disable-next-line prefer-const
       option = {
         title: {
           text: 'Les Miserables',
           subtext: 'Circular layout',
-          top: 'bottom',
-          left: 'right'
+          top: 'top',
+          left: 'left'
         },
+        color:'#fff',
         // tooltip: {},
-        legend: [
-          {
-            data: graph.categories.map(function (a: { name: string }) {
-              return a.name;
-            })
-          }
-        ],
+        // legend: [
+        //   {
+        //     data: graph.categories.map(function (a: { name: string }) {
+        //       return a.name;
+        //     })
+        //   }
+        // ],
         animationDurationUpdate: 1500,
         animationEasingUpdate: 'quinticInOut',
         series: [
           {
-            name: 'Les Miserables',
             type: 'graph',
             layout: 'circular',
             circular: {
@@ -54,7 +53,7 @@ const DemoChart: React.FC = () => {
             },
             data: graph.nodes,
             links: graph.links,
-            categories: graph.categories,
+            // categories: graph.categories,
             roam: true,
             label: {
               position: 'right',
@@ -72,7 +71,7 @@ const DemoChart: React.FC = () => {
     }
   }, []);
 
-  return <div ref={chartRef} style={{ width: '100%', height: '100vh' }} />;
+  return <div ref={chartRef} style={{ width: '100%', height: '60vh', margin: 'auto'}} />;
 };
 
 export default DemoChart;

@@ -1,13 +1,36 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <title>亚马芬监控平台大屏</title>
+  <script>
+    const { clientWidth } = document.documentElement
+    const { clientHeight } = document.documentElement
+    window.pageWidth = clientWidth / clientHeight > 16 / 9 ? clientHeight * (16 / 9) : clientWidth
+    const pageHeight = pageWidth / (16 / 9)
+    document.write(`
+      <style>
+        html{
+          font-size: ${pageWidth / 100}px;
+        }
+      </style>
+    `)
+  </script>
+  <script src="//at.alicdn.com/t/font_2544636_yfhjebj4vw.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.querySelector('#root')
+    root.style.width = pageWidth + 'px'
+    root.style.height = pageHeight + 'px'
+    root.style.marginTop = (clientHeight - pageHeight) / 2 + 'px'
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
