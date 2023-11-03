@@ -1,46 +1,45 @@
-import React, { useEffect } from 'react';
-import * as THREE from 'three';
+// import React, { useEffect } from 'react';
+// import * as THREE from 'three';
+import DemoChart from './components/DemoChart';
 
 function App() {
-  useEffect(() => {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 5;
-    camera.lookAt(0, 0, 0);
+  // useEffect(() => {
+  //   const scene = new THREE.Scene();
+  //   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  //   camera.position.z = 5;
 
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+  //   const geometry = new THREE.SphereGeometry(15, 32, 16);
+  //   const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+  //   const sphere = new THREE.Mesh(geometry, material); 
+  //   scene.add(sphere);
+  //   const renderer = new THREE.WebGLRenderer();
+  //   renderer.setSize(window.innerWidth, window.innerHeight);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    scene.add(ambientLight);
-    const pointLight = new THREE.PointLight(0xffffff, 0.9);
-    pointLight.position.set(200, 200, 200);
-    scene.add(pointLight)
-
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    const mount = document.createElement('div');
-    document.body.appendChild(mount);
-    mount.appendChild(renderer.domElement);
+  //   const mount = document.createElement('div');
+  //   document.body.appendChild(mount);
+  //   mount.appendChild(renderer.domElement);
 
 
-    function animate() {
-      requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    }
-    animate();
+  //   function animate() {
+  //     requestAnimationFrame(animate);
+  //     sphere.rotation.x += 0.01;
+  //     sphere.rotation.y += 0.01;
+  //     renderer.render(scene, camera);
+  //   }
+  //   animate();
 
-    return () => {
-      mount.removeChild(renderer.domElement);
-    };
-  }, []);
+  //   return () => {
+  //     mount.removeChild(renderer.domElement);
+  //   };
+  // }, []);
 
-  return <div id="mount" />;
+  return (
+    <div id='chart-container'>
+      <DemoChart />
+      {/* <div id='mount'></div> */}
+      
+    </div>
+  )
 }
 
 export default App;
