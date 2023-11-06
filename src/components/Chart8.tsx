@@ -2,7 +2,7 @@
 export const Chart8 = () => {
   return (
     <div className="tableWrapper">
-      <div className="title">接口数量统计top5</div>
+      <div className="title">当日接口交易量Top5</div>
       <table>
         <thead>
         <tr>

@@ -10,6 +10,7 @@ import { Chart8 } from './components/Chart8';
 import Chart9 from './components/Chart9';
 import DemoChart from './components/DemoChart';
 import { Icon } from './components/Icon';
+import ProcessBar from './components/ProcessBar';
 import { Statistic } from './components/Statistic';
 import './styles/app.scss';
 
@@ -52,7 +53,7 @@ function App() {
     <div className="home">
       <header>
         {/* <Clock /> */}
-        <span>亚马芬监控平台大屏</span>
+        <span>亚玛芬监控平台大屏</span>
         <div className="info">
           <Icon name="position" /> shanghai
           <Icon name="weather" /> 18℃ cloudy
@@ -77,8 +78,10 @@ function App() {
         <section className="section3">
           {/* <Chart1 /> */}
           <Chart9 />
-          <Chart5 />
+          {/* <ProcessBar /> */}
+          {/* <Chart5 /> */}
           <Chart3 />
+          <Chart1 />
         </section>
       </main>
       <p className="foot">©HAND Enterprise Solutions LTD. 2023-{year}</p>

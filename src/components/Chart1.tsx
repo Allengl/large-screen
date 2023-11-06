@@ -7,9 +7,9 @@ export const Chart1 = () => {
   const divRef = useRef(null);
   const myChart = useRef(null);
   const data = {
-    1: [50, 20, 30, 25, 15, 26, 20, '湖北省', '浙江省', '福建省', '北京', '上海', '重庆', '新疆'],
-    2: [16, 26, 22, 29, 17, 21, 27, '湖南省', '广东省', '江西省', '黑龙江省', '内蒙古', '广西省', '江苏省'],
-    3: [12, 25, 33, 18, 21, 23, 14, '陕西省', '辽宁省', '山东省', '河北省', '河南省', '甘肃省', '宁夏']
+    1: [50, 20, 30, 25, 15, 26, 20, 'ACE', 'CIB', 'WPOS', 'MDM', 'Local', 'SMMS', 'FKB'],
+    2: [16, 26, 22, 29, 17, 21, 27, 'CIB', 'CITI', 'ACE', 'SMMS', 'SHOU', 'CNC', 'CNFK'],
+    3: [12, 25, 33, 18, 21, 23, 14, 'ACS', 'BCDG', 'BCCRM', 'CRM', 'CITI', 'CIB', 'FKB']
   };
   const render = data => {
     myChart.current?.setOption(createEchartsOptions({
@@ -22,7 +22,7 @@ export const Chart1 = () => {
         },
         axisLabel: {
           formatter(val) {
-            if (val.length > 2) {
+            if (val.length > 4) {
               const array = val.split('');
               array.splice(2, 0, '\n');
               return array.join('');
@@ -54,7 +54,7 @@ export const Chart1 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <div className="title">昨日接口耗时统计</div>
+      <div className="title">系统接口数量</div>
       <div ref={divRef} className="chart"/>
     </div>
   );

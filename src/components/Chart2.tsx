@@ -9,12 +9,12 @@ export const Chart2 = () => {
     const myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
       color: ['#f6b044', '#3597d4', '#3559a7', '#ea5c5a', '#3ab059', '#fdfdfd'],
-      legend: {
-        bottom: px(0),
-        textStyle: { color: 'white' },
-        itemWidth: px(6),
-        itemHeight: px(6)
-      },
+      // legend: {
+      //   bottom: px(0),
+      //   textStyle: { color: 'white' },
+      //   itemWidth: px(6),
+      //   itemHeight: px(6)
+      // },
       grid: {
         x: px(0),
         x2: px(8),
@@ -25,7 +25,7 @@ export const Chart2 = () => {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: [2012, 2013, 2014, 2015, 2016, 2017, 2018],
+        data: [1, 5, 10, 15, 20, 25, 30],
         splitLine: { show: true, lineStyle: { color: '#1e393d' } },
         axisTick: { show: false },
         axisLine: { show: false },
@@ -35,26 +35,21 @@ export const Chart2 = () => {
         splitLine: { lineStyle: { color: '#1e393d' } },
         axisLabel: {
           formatter(val) {
-            return val * 100 + '%';
+            return val * 100 
           }
         }
       },
       series: [
-        {
-          name: '异常消息',
-          type: 'line',
-          data: [0.06, 0.05, 0.03, 0.04, 0.03, 0.02, 0.01]
-        },
+        // {
+        //   name: '异常消息',
+        //   type: 'line',
+        //   data: [6, 5, 3, 4, 3, 2, 1]
+        // },
         {
           name: '总消息',
           type: 'line',
-          data: [0.05, 0.03, 0.04, 0.06, 0.06, 0.03, 0.04]
+          data: [5, 3, 4, 6, 6, 3, 4]
         },
-        // {
-        //   name: '总次数',
-        //   type: 'line',
-        //   data: [0.08, 0.06, 0.04, 0.05, 0.03, 0.02, 0.01]
-        // },
       ].map(obj => ({
         ...obj,
         symbol: 'circle',

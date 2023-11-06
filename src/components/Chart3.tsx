@@ -1,70 +1,67 @@
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
-import {createEchartsOptions} from '../lib/createEchartOptions';
-import {px} from '../lib/px';
+import { createEchartsOptions } from '../lib/createEchartOptions';
+import { px } from '../lib/px';
 
 export const Chart3 = () => {
   const divRef = useRef(null);
   const myChart = useRef(null);
   const data = {
     1: [
-      0.15, 0.13, 0.11,
-      0.13, 0.14, 0.15,
-      0.16, 0.18, 0.21,
-      0.19, 0.17, 0.16,
-      0.15
+      15, 13, 11,
+      13, 14, 15,
+      25
     ],
     2: [
-      0.11, 0.15, 0.16,
-      0.22, 0.19, 0.17,
-      0.16, 0.14, 0.18,
-      0.17, 0.20, 0.17,
-      0.18
+      11, 15, 16,
+      22, 19, 17,
+      16
     ],
     3: [
-      0.13, 0.14, 0.17,
-      0.20, 0.17, 0.21,
-      0.19, 0.16, 0.15,
-      0.13, 0.15, 0.17,
-      0.16
+      13, 14, 17,
+      20, 17, 21,
+      22
     ]
   };
   const render = data => {
     myChart.current.setOption(createEchartsOptions({
-      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
+      color: ['#3597d4', '#f6b044', '#3559a7', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24],
-        splitLine: {show: true, lineStyle: {color: '#1e393d'}},
-        axisTick: {show: false},
-        axisLine: {show: false},
+        data: [0, 5, 10, 15, 20, 25, 30],
+        splitLine: { show: true, lineStyle: { color: '#1e393d' } },
+        axisTick: { show: false },
+        axisLine: { show: false },
       },
       yAxis: {
         type: 'value',
-        splitLine: {lineStyle: {color: '#1e393d'}},
+        splitLine: { lineStyle: { color: '#1e393d' } },
         axisLabel: {
           formatter(val) {
-            return val * 100 + '%';
+            return val
           }
         }
       },
-      series: [{
-        type: 'line',
-        data: data,
-        symbol: 'circle',
-        symbolSize: px(4),
-        lineStyle: {width: px(1)},
-        areaStyle: {
-          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-            offset: 0,
-            color: '#3559a7'
-          }, {
-            offset: 1,
-            color: '#1b1d52'
-          }]),
+      series: [
+        {
+          name: '业务异常',
+          type: 'line',
+          data: data,
+          symbol: 'circle',
+          symbolSize: px(4),
+          lineStyle: { width: px(1) },
+          areaStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              offset: 0,
+              color: '#3559a7'
+            }, {
+              offset: 1,
+              color: '#1b1d52'
+            }]),
+          }
         }
-      }]
+      ]
     }));
   };
   useEffect(() => {
@@ -76,8 +73,8 @@ export const Chart3 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <div className="title">系统接口数量</div>
-      <div ref={divRef} className="chart"/>
+      <div className="title">近30日异常消息数量趋势图</div>
+      <div ref={divRef} className="chart" />
     </div>
   );
 };

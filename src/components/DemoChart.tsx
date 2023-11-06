@@ -13,64 +13,110 @@ interface GraphNode {
 
 const DemoChart: React.FC = () => {
   const chartRef = useRef<HTMLDivElement>(null);
+  const l = 0;
+  const graph = DemoJson
+  let option: EChartsOption;
+  option = {
+    title: {
+      top: 'top',
+      left: 'left'
+    },
+    // color:'#fff',
+    tooltip: {},
+    legend: [
+      // {
+      //   data: graph.categories.map(function (a: { name: string }) {
+      //     return a.name;
+      //   })
+      // }
+    ],
+    animationDurationUpdate: 1500,
+    animationEasingUpdate: 'quinticInOut',
+    series: [
+      {
+        type: 'graph',
+        layout: 'circular',
+        circular: {
+          rotateLabel: true
+        },
+        data: graph.nodes,
+        links: graph.links,
+        // categories: graph.categories,
+        roam: true,
+        label: {
+          position: 'right',
+          formatter: '{b}'
+        },
+        lineStyle: {
+          color: '#f00',
+          curveness: 0.3,
+          width: 3
+        }
+      }
+    ]
+  };
+
+
   useEffect(() => {
     if (chartRef.current) {
       const myChart = echarts.init(chartRef.current);
-      let option: EChartsOption;
-
       myChart.showLoading();
       myChart.hideLoading();
-      const graph = DemoJson
       graph.nodes.forEach(function (node: GraphNode) {
         node.label = {
           show: node.symbolSize > 19
         };
       });
-      option = {
-        title: {
-          top: 'top',
-          left: 'left'
-        },
-        // color:'#fff',
-        tooltip: {},
-        legend: [
-          // {
-          //   data: graph.categories.map(function (a: { name: string }) {
-          //     return a.name;
-          //   })
-          // }
-        ],
-        animationDurationUpdate: 1500,
-        animationEasingUpdate: 'quinticInOut',
-        series: [
-          {
-            type: 'graph',
-            layout: 'circular',
-            circular: {
-              rotateLabel: true
-            },
-            data: graph.nodes,
-            links: graph.links,
-            // categories: graph.categories,
-            roam: true,
-            label: {
-              position: 'right',
-              formatter: '{b}'
-            },
-            lineStyle: {
-              color: '#f00',
-              curveness: 0.3,
-              width: 3
-            }
-          }
-        ]
-      };
+
 
       myChart.setOption(option);
+
+      // let l = 0; // Initialize l
+      // const linesSize = lines.length; // Get the size of lines
+      
+      // window.setInterval(() => {
+      //   const source = lines[l].source;
+      //   const target = lines[l].target;
+      //   const sourceItem = items[source];
+      //   const targetItem = items[target];
+      
+      //   // Highlight the line
+      //   sourceItem.symbolSize = 30;
+      //   targetItem.symbolSize = 30;
+      //   lines[l] = {
+      //     source: lines[l].source,
+      //     target: lines[l].target,
+      //     lineStyle: {
+      //       color: '#f00',
+      //       width: 5
+      //     }
+      //   };
+      
+      //   // Update the chart
+      //   myChart.setOption(option);
+      
+      //   // Reset the line style
+      //   sourceItem.symbolSize = 20;
+      //   targetItem.symbolSize = 20;
+      //   lines[l] = {
+      //     source: lines[l].source,
+      //     target: lines[l].target,
+      //     lineStyle: {
+      //       color: 'blue',
+      //       width: 1
+      //     }
+      //   };
+      
+      //   // Move on to the next line
+      //   l = (l + 1) % linesSize;
+      
+      //   // Update the chart again to reflect the reset styles
+      //   myChart.setOption(option);
+      // }, 1000);
     }
   }, []);
 
-  return <div ref={chartRef} style={{ width: '100%', height: '60vh', margin: 'auto'}} />;
+  return <div ref={chartRef} style={{ width: '100%', height: '60vh', margin: 'auto' }} />;
 };
 
 export default DemoChart;

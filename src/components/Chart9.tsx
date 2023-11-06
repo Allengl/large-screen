@@ -68,7 +68,7 @@ const Chart9 = () => {
         type: 'value',
         boundaryGap: [0, 0.01],
         min: '0',
-        max: '100'
+        max: '1'
       },
       yAxis: {
         type: 'category',
@@ -77,7 +77,7 @@ const Chart9 = () => {
       series: [
         {
           type: 'bar',
-          data: [12, 23, 45,],
+          data: [0.12, 0.23, 0.45,],
           itemStyle: {
             color: '#3597d4'
           }
@@ -97,7 +97,7 @@ const Chart9 = () => {
 
   return (
     <div className="chartWrapper">
-      <div className="title">内存使用情况</div>
+      <div className="title">app01资源使用情况</div>
       <div ref={divRef} className="chart" />
     </div>
   )

@@ -76,7 +76,7 @@ export const Chart7 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <div className="title">当日接口交易量</div>
+      <div className="title">当日接口调用占比</div>
       <div ref={divRef} className="chart"/>
     </div>
   );
