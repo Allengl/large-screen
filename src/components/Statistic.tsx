@@ -27,9 +27,11 @@ export const Statistic = () => {
   return (
     <div className="formWrapper">
       <div><p>{num2}</p>总交易量</div>
-      <div><p>{num1}</p>近30天平均交易量</div>
+      <div><p>{num1}</p>今日总交易量</div>
+      <div><p>58</p>今日失败量</div>
+      <div><p>3203221</p>近30天平均交易量</div>
       <div><p>58</p>系统总数量</div>
-
+      <div><p>200</p>接口总数量</div>
     </div>
   );
 };

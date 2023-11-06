@@ -8,25 +8,25 @@ export const Chart7 = () => {
   const myChart = useRef(null);
   const data = {
     1: [
-      {value: 0.06, name: '深圳'},
-      {value: 0.15, name: '杭州'},
-      {value: 0.13, name: '武汉'},
-      {value: 0.06, name: '长沙'},
-      {value: 0.06, name: '兰州'},
+      {value: 0.06, name: 'ACS'},
+      {value: 0.15, name: 'BC_DGT_SAL'},
+      {value: 0.13, name: 'BC_CRM'},
+      {value: 0.06, name: 'CRM'},
+      {value: 0.06, name: 'CITIMACAU'},
     ],
     2: [
-      {value: 0.08, name: '北京'},
-      {value: 0.06, name: '上海'},
-      {value: 0.11, name: '广州'},
-      {value: 0.09, name: '天津'},
-      {value: 0.12, name: '重庆'},
+      {value: 0.08, name: 'CN_FKB_MO'},
+      {value: 0.06, name: 'BC_SMMS'},
+      {value: 0.11, name: 'DMS'},
+      {value: 0.09, name: 'SMMS'},
+      {value: 0.12, name: 'CITIHK'},
     ],
     3: [
-      {value: 0.13, name: '银川'},
-      {value: 0.09, name: '济南'},
-      {value: 0.08, name: '沈阳'},
-      {value: 0.10, name: '河源'},
-      {value: 0.09, name: '金华'},
+      {value: 0.13, name: 'CIB'},
+      {value: 0.09, name: 'FKB'},
+      {value: 0.08, name: 'Local BI'},
+      {value: 0.10, name: 'MDM'},
+      {value: 0.09, name: 'SHUYUN'},
     ]
   };
   const render = data => {

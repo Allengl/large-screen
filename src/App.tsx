@@ -7,6 +7,7 @@ import { Chart5 } from './components/Chart5';
 import { Chart6 } from './components/Chart6';
 import { Chart7 } from './components/Chart7';
 import { Chart8 } from './components/Chart8';
+import Chart9 from './components/Chart9';
 import DemoChart from './components/DemoChart';
 import { Icon } from './components/Icon';
 import { Statistic } from './components/Statistic';
@@ -74,7 +75,8 @@ function App() {
           <span>数据实时监控中</span>
         </section>
         <section className="section3">
-          <Chart1 />
+          {/* <Chart1 /> */}
+          <Chart9 />
           <Chart5 />
           <Chart3 />
         </section>

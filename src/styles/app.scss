@@ -102,16 +102,20 @@
 
     .section1 {
       grid-area: box1;
+
       >.tableWrapper {
         margin-bottom: px(12);
         border-collapse: collapse;
+
         >table {
+
           th,
           td {
             border: 1px solid #00070c;
             text-align: center;
             font-size: smaller;
           }
+
           thead {
             th {
               height: px(16);
@@ -145,13 +149,14 @@
       }
 
       >.formWrapper {
-        display: flex;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: px(5);
 
         div {
-          margin-top: px(15);
+          margin-bottom: px(10);
           width: px(90);
-          height: px(46);
+          height: px(40);
           border: 1px solid #165374;
           background: rgba(31, 59, 70, 0.35);
           display: flex;
@@ -276,6 +281,7 @@
           flex: 1;
         }
       }
+
     }
   }
 

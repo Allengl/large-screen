@@ -23,7 +23,7 @@ const DemoChart: React.FC = () => {
       const graph = DemoJson
       graph.nodes.forEach(function (node: GraphNode) {
         node.label = {
-          show: node.symbolSize > 30
+          show: node.symbolSize > 19
         };
       });
       option = {
@@ -31,7 +31,7 @@ const DemoChart: React.FC = () => {
           top: 'top',
           left: 'left'
         },
-        color:'#fff',
+        // color:'#fff',
         tooltip: {},
         legend: [
           // {
@@ -58,8 +58,9 @@ const DemoChart: React.FC = () => {
               formatter: '{b}'
             },
             lineStyle: {
-              color: 'source',
-              curveness: 0.3
+              color: '#f00',
+              curveness: 0.3,
+              width: 3
             }
           }
         ]
