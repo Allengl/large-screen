@@ -1,8 +1,8 @@
 
-export const Chart5 = () => {
+export const Chart8 = () => {
   return (
-    <div className="战果">
-      <h2>当日接口交易量</h2>
+    <div className="tableWrapper">
+      <div className="title">接口数量统计top5</div>
       <table>
         <thead>
         <tr>
@@ -11,13 +11,19 @@ export const Chart5 = () => {
         </thead>
         <tbody>
         <tr>
-          <td>2015</td><td>2</td><td>3</td>
+          <td>CN_Citibank</td><td>2</td><td>3</td>
         </tr>
         <tr>
-          <td>2016</td><td>2</td><td>3</td>
+          <td>BC_SMMS</td><td>2</td><td>3</td>
         </tr>
         <tr>
-          <td>2017</td><td>2</td><td>3</td>
+          <td>CN_FKB_MO</td><td>2</td><td>3</td>
+        </tr>
+        <tr>
+          <td>ACS</td><td>2</td><td>3</td>
+        </tr>
+        <tr>
+          <td>BC_CRM</td><td>2</td><td>3</td>
         </tr>
         </tbody>
       </table>

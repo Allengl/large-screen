@@ -1,4 +1,3 @@
-
 @import "../styles/helper";
 
 .home {
@@ -12,6 +11,7 @@
   transform: translate(-50%, -50%);
   box-shadow: 0 0 10px 1px #103852;
   overflow: hidden;
+
   header {
     height: px(30);
     display: flex;
@@ -22,6 +22,7 @@
     background: linear-gradient(90deg, rgba(8, 24, 35, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(8, 24, 35, 1) 100%);
     position: relative;
     text-shadow: 0 0 10px #1d393d, 0 0 20px #1d393d, 0 0 30px #1d393d, 0 0 40px #1d393d;
+
     &::before {
       content: '';
       position: absolute;
@@ -31,28 +32,34 @@
       right: 0;
       background: linear-gradient(90deg, rgba(16, 48, 65, 1) 0%, rgba(0, 0, 0, 0) 25%, rgba(26, 58, 75, 1) 50%, rgba(0, 0, 0, 0) 75%, rgba(16, 48, 65, 1) 100%);
     }
+
     .clock {
       position: absolute;
       left: px(14);
       color: #6d929d;
-      > div {
+
+      >div {
         &:first-child {
           font-size: px(9);
           margin-bottom: px(1);
         }
+
         &:nth-child(2) {
           font-size: px(5)
         }
       }
     }
+
     .info {
       position: absolute;
       right: 0;
       font-size: px(9);
       color: #6d929d;
       padding: 0 px(13);
+
       .icon {
         fill: #6d929d;
+
         &:last-child {
           margin-left: px(7);
           transform: scale(1.25);
@@ -60,12 +67,14 @@
       }
     }
   }
+
   main {
     height: px(361);
     margin-top: px(15);
     display: grid;
     grid-template:
       ". box1 . box2 . box3" 1fr / 14fr 168fr 20fr 318fr 20fr 168fr 14fr;
+
     .title {
       border: 1px solid #103852;
       color: #ddd;
@@ -76,6 +85,7 @@
       display: flex;
       align-items: center;
       position: relative;
+
       &::before {
         content: '';
         position: absolute;
@@ -84,28 +94,60 @@
         left: 0;
         right: 0;
         box-shadow: 4px 0 0 -3px #082131,
-        -4px 0 0 -3px #082131,
-        0 4px 0 -3px #082131,
-        0 -4px 0 -3px #082131,;
+          -4px 0 0 -3px #082131,
+          0 4px 0 -3px #082131,
+          0 -4px 0 -3px #082131, ;
       }
     }
+
     .section1 {
       grid-area: box1;
+      >.tableWrapper {
+        margin-bottom: px(12);
+        border-collapse: collapse;
+        >table {
+          th,
+          td {
+            border: 1px solid #00070c;
+            text-align: center;
+            font-size: smaller;
+          }
+          thead {
+            th {
+              height: px(16);
+              box-shadow: inset 0 0 px(60) 0 #00070c;
+            }
+          }
+
+          tbody {
+            td {
+              height: px(14);
+              width: px(58);
+              background: #00070c;
+            }
+          }
+        }
+      }
     }
+
     .section2 {
       grid-area: box2;
       position: relative;
-      > .chart {
+
+      >.chart {
         height: px(240);
       }
-      > p {
+
+      >p {
         font-size: px(6);
         color: #eee;
         text-align: end;
       }
-      > .formWrapper {
+
+      >.formWrapper {
         display: flex;
         justify-content: space-around;
+
         div {
           margin-top: px(15);
           width: px(90);
@@ -119,11 +161,13 @@
           font-size: px(6);
           color: #aaa;
           position: relative;
+
           p {
             margin-bottom: px(2);
             font-size: px(14);
             color: #eee;
           }
+
           &::before {
             content: '';
             position: absolute;
@@ -132,20 +176,22 @@
             left: 0;
             right: 0;
             box-shadow: 7px 0 0 -6px #103852,
-            -7px 0 0 -6px #103852,
-            0 7px 0 -6px #103852,
-            0 -7px 0 -6px #103852,;
+              -7px 0 0 -6px #103852,
+              0 7px 0 -6px #103852,
+              0 -7px 0 -6px #103852, ;
           }
         }
       }
-      > span {
+
+      >span {
         font-size: px(6);
         position: absolute;
         bottom: px(52);
         left: px(10);
         color: #eee;
       }
-      > .ring {
+
+      >.ring {
         border: 1px solid #0c2939;
         position: absolute;
         bottom: px(66);
@@ -156,7 +202,8 @@
         border-radius: 50%;
         overflow: hidden;
         animation: spin infinite 5s linear;
-        > .radar {
+
+        >.radar {
           border: 2px solid #103142;
           position: absolute;
           width: px(27);
@@ -165,6 +212,7 @@
           left: 50%;
           transform: translate(-50%, -50%);
           border-radius: 50%;
+
           &::before {
             content: '';
             position: absolute;
@@ -176,6 +224,7 @@
             border: 2px solid #082132;
             border-radius: 50%;
           }
+
           &::after {
             content: '';
             position: absolute;
@@ -188,42 +237,49 @@
             background: #007cc0;
             border-radius: 50%;
             box-shadow: 0 0 5px 1px #0094e4,
-            -3px -10px 5px 1px #0094e4,
-            -7px -15px 10px 1px #0094e4,
-            -3px -3px 10px 1px #0094e4,
-            -7px -7px 20px 1px #0094e4,
-            -11px -11px 30px 1px #0094e4,
-            -11px -11px 40px 1px #0094e4,
-            -11px -11px 30px 1px #0094e4,
-            -11px -11px 30px 1px #0094e4;
+              -3px -10px 5px 1px #0094e4,
+              -7px -15px 10px 1px #0094e4,
+              -3px -3px 10px 1px #0094e4,
+              -7px -7px 20px 1px #0094e4,
+              -11px -11px 30px 1px #0094e4,
+              -11px -11px 40px 1px #0094e4,
+              -11px -11px 30px 1px #0094e4,
+              -11px -11px 30px 1px #0094e4;
           }
         }
       }
+
       @keyframes spin {
         from {
           transform: rotate(0);
         }
+
         to {
           transform: rotate(360deg);
         }
       }
     }
+
     .section3 {
       grid-area: box3;
     }
-    .section1, .section3 {
-      > .chartWrapper {
+
+    .section1,
+    .section3 {
+      >.chartWrapper {
         height: px(98);
         display: flex;
         flex-direction: column;
         margin-bottom: px(20);
-        > .chart {
+
+        >.chart {
           flex: 1;
         }
       }
     }
   }
-  > p {
+
+  >p {
     font-size: px(7);
     position: absolute;
     bottom: 0;

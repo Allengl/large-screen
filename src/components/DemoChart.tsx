@@ -28,20 +28,18 @@ const DemoChart: React.FC = () => {
       });
       option = {
         title: {
-          text: 'Les Miserables',
-          subtext: 'Circular layout',
           top: 'top',
           left: 'left'
         },
         color:'#fff',
-        // tooltip: {},
-        // legend: [
-        //   {
-        //     data: graph.categories.map(function (a: { name: string }) {
-        //       return a.name;
-        //     })
-        //   }
-        // ],
+        tooltip: {},
+        legend: [
+          // {
+          //   data: graph.categories.map(function (a: { name: string }) {
+          //     return a.name;
+          //   })
+          // }
+        ],
         animationDurationUpdate: 1500,
         animationEasingUpdate: 'quinticInOut',
         series: [

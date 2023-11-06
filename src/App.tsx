@@ -6,6 +6,7 @@ import { Chart3 } from './components/Chart3';
 import { Chart5 } from './components/Chart5';
 import { Chart6 } from './components/Chart6';
 import { Chart7 } from './components/Chart7';
+import { Chart8 } from './components/Chart8';
 import DemoChart from './components/DemoChart';
 import { Icon } from './components/Icon';
 import { Statistic } from './components/Statistic';
@@ -50,7 +51,7 @@ function App() {
     <div className="home">
       <header>
         {/* <Clock /> */}
-        <span>亚马芬监控平台</span>
+        <span>亚马芬监控平台大屏</span>
         <div className="info">
           <Icon name="position" /> shanghai
           <Icon name="weather" /> 18℃ cloudy
@@ -59,8 +60,8 @@ function App() {
       <main>
         <section className="section1">
           <Chart2 />
+          <Chart8 />
           <Chart7 />
-          <Chart6 />
         </section>
         <section className="section2">
           {/* <Statistic />
