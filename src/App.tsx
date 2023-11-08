@@ -9,9 +9,11 @@ import { Chart7 } from './components/Chart7';
 import { Chart8 } from './components/Chart8';
 import Chart9 from './components/Chart9';
 import DemoChart from './components/DemoChart';
+import Globe from './components/Globe';
 import { Icon } from './components/Icon';
 import ProcessBar from './components/ProcessBar';
 import { Statistic } from './components/Statistic';
+import { px } from './lib/px';
 import './styles/app.scss';
 
 function App() {
@@ -69,7 +71,8 @@ function App() {
           {/* <Statistic />
             <Chart4 /> */}
           <Statistic />
-          <DemoChart />
+          {/* <DemoChart /> */}
+          <Globe />
           <div className="ring">
             <div className="radar" />
           </div>

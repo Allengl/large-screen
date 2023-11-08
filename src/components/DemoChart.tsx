@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 import { DemoJson } from '../data/data';
+import { div } from 'three/examples/jsm/nodes/Nodes.js';
 
 type EChartsOption = echarts.EChartsOption;
 
@@ -42,7 +43,17 @@ const DemoChart: React.FC = () => {
         data: graph.nodes,
         links: graph.links,
         // categories: graph.categories,
-        roam: true,
+        dataZoom: [
+          {
+            type: 'inside',
+            disabled: true // 禁用缩放
+          },
+          {
+            type: 'slider',
+            disabled: true // 禁用滑动条拖动
+          }
+        ],
+        roam: false,
         label: {
           position: 'right',
           formatter: '{b}'
@@ -73,13 +84,13 @@ const DemoChart: React.FC = () => {
 
       // let l = 0; // Initialize l
       // const linesSize = lines.length; // Get the size of lines
-      
+
       // window.setInterval(() => {
       //   const source = lines[l].source;
       //   const target = lines[l].target;
       //   const sourceItem = items[source];
       //   const targetItem = items[target];
-      
+
       //   // Highlight the line
       //   sourceItem.symbolSize = 30;
       //   targetItem.symbolSize = 30;
@@ -91,10 +102,10 @@ const DemoChart: React.FC = () => {
       //       width: 5
       //     }
       //   };
-      
+
       //   // Update the chart
       //   myChart.setOption(option);
-      
+
       //   // Reset the line style
       //   sourceItem.symbolSize = 20;
       //   targetItem.symbolSize = 20;
@@ -106,17 +117,21 @@ const DemoChart: React.FC = () => {
       //       width: 1
       //     }
       //   };
-      
+
       //   // Move on to the next line
       //   l = (l + 1) % linesSize;
-      
+
       //   // Update the chart again to reflect the reset styles
       //   myChart.setOption(option);
       // }, 1000);
     }
   }, []);
 
-  return <div ref={chartRef} style={{ width: '100%', height: '60vh', margin: 'auto' }} />;
+  return (
+    <div className='chart'>
+      <div ref={chartRef} style={{ width: '100%', height: '60vh', margin: 'auto' }} />;
+    </div>
+  )
 };
 
 export default DemoChart;
